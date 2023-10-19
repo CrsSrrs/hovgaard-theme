@@ -4,7 +4,7 @@
       class="nav-item"
       v-for="item in theme.nav"
       :key="item.text"
-      :class="{ 'is-active': currentPath === item.link }"
+      :class="{ 'is-active': currentPath === withBase(item.link) }"
     >
       <a
         :href="withBase(item.link)"

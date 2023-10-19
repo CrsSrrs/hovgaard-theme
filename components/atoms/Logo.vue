@@ -1,6 +1,6 @@
 <template>
   <div class="logo">
-    <a :href="withBase('/')" :target="target">
+    <a :href="theme.logoLink || withBase('/')" :target="target">
       <img :src="withBase(theme.logo)">
     </a>
   </div>
