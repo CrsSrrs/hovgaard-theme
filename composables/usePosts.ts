@@ -1,5 +1,5 @@
 import { computed } from 'vue'
-import { useRoute } from 'vitepress'
+import { useRoute, withBase } from 'vitepress'
 import { data as posts } from './posts.data'
 
 export function usePosts() {
@@ -8,7 +8,7 @@ export function usePosts() {
   const path = route.path
 
   function findCurrentIndex() {
-    const result = posts.findIndex((p) => p.url === route.path)
+    const result = posts.findIndex((p) => withBase(p.url) === route.path)
     if (result === -1) console.error(`blog post missing: ${route.path}`)
     return result
   }
