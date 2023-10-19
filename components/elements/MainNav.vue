@@ -7,7 +7,7 @@
       :class="{ 'is-active': currentPath === withBase(item.link) }"
     >
       <a
-        :href="withBase(item.link)"
+        :href="getHref(item.link)"
         :target="item.target"
       >{{ item.text }}</a>
     </li>
@@ -25,6 +25,14 @@ let currentPath = ref(router.route.path);
 
 router.onAfterRouteChanged = (to) => {
   currentPath.value = to;
+}
+
+function getHref(link) {
+  return (isExternal(link)) ? link : withBase(link);
+}
+
+function isExternal(url) {
+  return /https:\/\/|http:\/\//.test(url);
 }
 </script>
 
