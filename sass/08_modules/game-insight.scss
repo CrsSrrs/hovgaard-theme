@@ -1,0 +1,100 @@
+.game-insight {
+  margin-top: spacing(x4) * (-1);
+
+  :deep(.h1) {
+    margin-bottom: spacing(s);
+  }
+
+  :deep(.h6) {
+    margin-bottom: spacing(xs);
+  }
+}
+
+._details {
+  padding-top: spacing(x5);
+  padding-bottom: spacing(x5);
+  padding-left: spacing(x5);
+  padding-right: spacing(x5);
+
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+
+  transform: translateY((spacing(x5) + spacing(x10)) * (-1));
+}
+
+table {
+  margin-bottom: spacing(x4);
+
+  display: block;
+}
+
+tr:not(:last-child) {
+  td {
+    padding-bottom: text-spacing(xs);
+  }
+}
+
+td:first-child {
+  padding-right: text-spacing(x6);
+}
+
+
+
+.-theme-purple {
+  ._details {
+    background-color: color(grey, 900, 0.9);
+  }
+}
+
+.-theme-orange {
+  ._details {
+    background-color: color(greyblue, 900, 0.9);
+  }
+}
+.-theme-blue {
+  ._details {
+    background-color: color(blue, 1000, 0.9);
+  }
+}
+
+@include breakpoint(sm) {
+  .game-insight {
+    margin-top: 0;
+    margin-bottom: spacing(x15);
+  }
+
+  ._details {
+    transform: translateY(0);
+  }
+
+  .-theme-purple {
+    ._details {
+      background-color: color(grey, 800, 0.9);
+    }
+  }
+
+  .-theme-orange {
+    ._details {
+      background-color: color(greyblue, 800, 0.9);
+    }
+  }
+  .-theme-blue {
+    ._details {
+      background-color: color(blue, 900, 0.9);
+    }
+  }
+}
+
+
+@include breakpoint(xs) {
+  ._details {
+    padding-top: spacing(x4);
+    padding-bottom: spacing(x4);
+    padding-left: spacing(x4);
+    padding-right: spacing(x4);
+  }
+
+  td:first-child {
+    padding-right: text-spacing(x3);
+  }
+}

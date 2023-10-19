@@ -1,0 +1,23 @@
+.stage-text {
+  padding-top: spacing(x15);
+  margin-bottom: spacing(x15);
+
+  :deep(p) {
+    @include font-size(l);
+    font-weight: 600;
+  }
+
+  .h6 {
+    margin-bottom: text-spacing(xs);
+  }
+
+  .h1 {
+    margin-bottom: spacing(x6);
+  }
+}
+
+@include breakpoint(xs) {
+  .stage-text {
+    margin-bottom: spacing(x10);
+  }
+}

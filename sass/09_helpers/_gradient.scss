@@ -1,0 +1,185 @@
+.text-gradient {
+  display: inline-block;
+  background-clip: text;
+}
+
+.gradient-glow {
+  position: relative;
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 50vh;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+}
+
+.gradient-border {
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    content: "";
+    padding: 2px;
+    border-radius: 10px;
+
+    position: absolute;
+    z-index: 0;
+
+    pointer-events: none;
+    inset: 0;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+  }
+}
+
+.-theme-purple {
+  .text-gradient {
+    background: linear-gradient(
+      90deg,
+      color(purple, 400) 0%,
+      color(purple, 600) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gradient-glow {
+    background-color: color(grey, 1000);
+
+    &::before {
+      background: radial-gradient(
+        ellipse at center 0%,
+        color(purple, 600, 0.3) 0,
+        color(purple, 600, 0.3) 25%,
+        transparent 75%
+      );
+    }
+  }
+
+  .gradient-border {
+    &::before {
+      background: linear-gradient(90deg, color(purple, 400) 0%, color(purple, 600) 100%);
+    }
+  }
+}
+
+.-theme-orange {
+  .text-gradient {
+    background: linear-gradient(
+      90deg,
+      color(orange, 100) 0%,
+      color(orange, 700) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gradient-glow {
+    background-color: color(greyblue, 900);
+
+    &::before {
+      background: radial-gradient(
+        ellipse at center 0%,
+        color(greyblue, 600, 0.2) 0,
+        color(greyblue, 600, 0.2) 25%,
+        transparent 75%
+      );
+    }
+  }
+
+  .gradient-border {
+    &::before {
+      background: linear-gradient(90deg, color(orange, 100) 0%, color(orange, 700) 100%);
+    }
+  }
+}
+
+.-theme-blue {
+  .text-gradient {
+    background: linear-gradient(
+      90deg,
+      color(blue, 400) 0%,
+      color(blue, 700) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gradient-glow {
+    background-color: color(blue, 1000);
+
+    &::before {
+      background: radial-gradient(
+        ellipse at center 0%,
+        color(blue, 400, 0.2) 0,
+        color(blue, 400, 0.2) 25%,
+        transparent 75%
+      );
+    }
+  }
+
+  .gradient-border {
+    &::before {
+      background: linear-gradient(90deg, color(blue, 400) 0%, color(blue, 700) 100%);
+    }
+  }
+}
+
+
+@include breakpoint(sm) {
+  .gradient-glow::before {
+    height: 50vh;
+  }
+
+  .-theme-purple {
+    .gradient-glow {
+      &::before {
+        background: radial-gradient(
+          ellipse at center 0%,
+          color(purple, 600, 0.3) 0,
+          color(purple, 600, 0.3) 50%,
+          transparent 100%
+        );
+      }
+    }
+  }
+
+  .-theme-orange {
+    .gradient-glow {
+      &::before {
+        background: radial-gradient(
+          ellipse at center 0%,
+          color(greyblue, 600, 0.2) 0,
+          color(greyblue, 600, 0.2) 50%,
+          transparent 100%
+        );
+      }
+    }
+  }
+
+  .-theme-blue {
+    .gradient-glow {
+      &::before {
+        background: radial-gradient(
+          ellipse at center 0%,
+          color(blue, 400, 0.2) 0,
+          color(blue, 400, 0.2) 50%,
+          transparent 100%
+        );
+      }
+    }
+  }
+}

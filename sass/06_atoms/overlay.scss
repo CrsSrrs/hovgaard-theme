@@ -1,0 +1,45 @@
+.overlay {
+  background-color: color(grey, 900);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  opacity: .7;
+  z-index: 0;
+
+  &.-color-grey-700 {
+    background-color: color(grey, 700);
+  }
+
+  &.-op-0 {
+    opacity: 0;
+  }
+
+  &.-op-2 {
+    opacity: .2;
+  }
+
+  &.-op-4 {
+    opacity: .4;
+  }
+
+  &.-op-6 {
+    opacity: .6;
+  }
+
+  &.-op-8 {
+    opacity: .8;
+  }
+
+  &.-op-9 {
+    opacity: .9;
+  }
+
+  &.-gradient {
+    background: linear-gradient(to top, color(grey, 900) 0%, transparent 60%);
+    opacity: 0.8;
+  }
+}

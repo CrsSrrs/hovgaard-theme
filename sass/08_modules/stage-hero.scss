@@ -1,0 +1,69 @@
+.stage-hero {
+  color: color(ambient);
+
+  :deep(._text) {
+    text-align: center;
+
+    position: absolute;
+    top: calc(50% + #{spacing(x5)});
+    left: 0;
+    right: 0;
+
+    transform: translateY(-50%);
+
+    img {
+      display: inline-block;
+    }
+  }
+
+}
+
+:deep(h1:last-child) {
+  margin-bottom: 0;
+}
+
+.-theme-purple {
+  .stage-hero {
+    background-color: color(grey, 1000);
+  }
+}
+
+.-theme-orange {
+  .stage-hero {
+    background-color: color(greyblue, 900);
+  }
+}
+
+.-theme-blue {
+  .stage-hero {
+    background-color: color(blue, 1000);
+  }
+}
+
+@include breakpoint(sm) {
+  .stage-hero {
+    :deep(.ratio-box.-thin-banner) {
+      &::before {
+        padding-top: 75%;
+      }
+    }
+
+    :deep(._text) {
+      top: calc(50% + #{spacing(x4)});
+    }
+  }
+}
+
+@include breakpoint(xs) {
+  .stage-hero {
+    :deep(.ratio-box.-thin-banner) {
+      &::before {
+        padding-top: 140%;
+      }
+    }
+
+    :deep(._text) {
+      top: calc(50% + #{spacing(x3)});
+    }
+  }
+}

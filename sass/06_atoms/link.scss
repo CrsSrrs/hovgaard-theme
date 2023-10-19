@@ -1,0 +1,40 @@
+.link {
+  text-transform: uppercase;
+  font-weight: 600;
+
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+.-theme-purple {
+  .link {
+    color: color(purple, 400);
+
+    &:hover {
+      color: darken(color(purple, 400), 5);
+    }
+  }
+}
+
+.-theme-orange {
+  .link {
+    color: color(orange, 600);
+
+    &:hover {
+      color: darken(color(orange, 600), 5);
+    }
+  }
+}
+
+.-theme-blue {
+  .link {
+    color: color(blue, 600);
+
+    &:hover {
+      color: darken(color(blue, 600), 5);
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.main-nav {
+  text-align: right;
+}
+
+.nav-item {
+  border-bottom: 2px solid transparent;
+
+  list-style-type: none;
+  display: inline-block;
+
+  transition: border-color .2s ease;
+
+  &:not(:last-child) {
+    margin-right: spacing(x4);
+  }
+
+  &.is-active {
+    border-color: color(ambient);
+  }
+
+  &:hover {
+    border-color: color(ambient);
+  }
+}
+
+a,
+a:link,
+a:visited,
+a:active
+{
+  padding-top: spacing(s);
+  padding-bottom: spacing(s) - 1px;
+
+  display: inline-block;
+
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+}

@@ -1,0 +1,54 @@
+.team-insight {
+  margin-bottom: spacing(x15);
+
+  .h2 {
+    margin-bottom: spacing(x10);
+  }
+}
+
+._member {
+  margin-bottom: spacing(x10);
+  text-align: center;
+}
+
+._avatar {
+  margin-bottom: spacing(x4);
+  width: 100%;
+  max-width: 200px;
+
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    display: block;
+  }
+}
+
+._name {
+  margin-bottom: text-spacing(x4);
+
+  @include font-size(h5);
+  font-weight: 700;
+}
+
+._socials {
+  a {
+    margin-left: spacing(xxs);
+    margin-right: spacing(xxs);
+
+    display: inline-block;
+
+    transition: color .2s ease;
+
+    &:hover {
+      color: color(purple, 400);
+    }
+  }
+}
+
+@include breakpoint(xs) {
+  .team-insight {
+    margin-bottom: spacing(x10);
+  }
+}

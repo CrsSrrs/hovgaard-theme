@@ -1,0 +1,79 @@
+.button {
+  padding-top: spacing(x1h);
+  padding-bottom: spacing(x1h) - 1px;
+  padding-left: spacing(x2h);
+  padding-right: spacing(x2h);
+
+  display: inline-block;
+  border-radius: 10px;
+
+  font-weight: bold;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition: background-color .2s ease;
+
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+  }
+
+  &.-full-width {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  &.-thin {
+    padding-top: spacing(x1);
+    padding-bottom: spacing(x1);
+    padding-left: spacing(x1h);
+    padding-right: spacing(x1h);
+  }
+}
+
+.-theme-purple {
+  .button {
+    background-color: color(purple, 400);
+
+    &:hover {
+      background-color: darken(color(purple, 400), 10);
+    }
+  }
+}
+
+.-theme-orange {
+  .button {
+    background-color: color(orange, 600);
+
+    &:hover {
+      background-color: darken(color(orange, 600), 10);
+    }
+  }
+}
+
+@property --blue400 {
+  syntax: '<color>';
+  initial-value: color(blue, 400);
+  inherits: false;
+}
+
+@property --blue700 {
+  syntax: '<color>';
+  initial-value: color(blue, 700);
+  inherits: false;
+}
+
+.-theme-blue {
+  .button {
+    background: linear-gradient(90deg, var(--blue400) 0%, var(--blue700) 100%);
+    transition: --blue400 .2s, --blue700 .2s;
+
+    &:hover {
+      --blue400: #{darken(color(blue, 700), 10)};
+      --blue700: #{darken(color(blue, 700), 10)};
+    }
+  }
+}
+

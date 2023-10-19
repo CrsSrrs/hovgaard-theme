@@ -1,0 +1,10 @@
+.site:not(.-news) {
+  main {
+    padding-top: spacing(x10);
+    padding-bottom: spacing(x15);
+
+    color: color(ambient);
+  }
+}
+
+

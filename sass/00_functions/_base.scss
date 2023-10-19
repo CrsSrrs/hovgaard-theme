@@ -1,0 +1,13 @@
+@use "sass:math";
+
+@function strip-unit($num) {
+  @return math.div($num, $num * 0 + 1);
+}
+
+@function is-number($value) {
+  @return type-of($value) == 'number';
+}
+
+@function is-absolute-length($value) {
+  @return is-number($value) and index('cm' 'mm' 'in' 'px' 'pt' 'pc', unit($value)) != null;
+}

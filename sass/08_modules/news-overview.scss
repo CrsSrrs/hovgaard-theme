@@ -1,0 +1,9 @@
+.news-overview {
+  margin-bottom: spacing(x15);
+}
+
+@include breakpoint(xs) {
+  .news-overview {
+    margin-bottom: spacing(x10);
+  }
+}

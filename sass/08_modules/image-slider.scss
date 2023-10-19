@@ -1,0 +1,139 @@
+.image-slider {
+  margin-bottom: spacing(x15);
+
+  --swiper-pagination-top: calc(100% + #{spacing(s)});
+  --swiper-pagination-bottom: auto;
+  --swiper-pagination-bullet-inactive-color: #{color(ambient)};
+}
+
+:deep(img) {
+  border-radius: 10px;
+}
+
+swiper-container {
+  margin-bottom: spacing(s);
+  cursor: grab;
+}
+
+._nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.swiper-button {
+  &-next, &-prev {
+    width: spacing(x6);
+    height: spacing(x6);
+
+    border-radius: 50%;
+
+    display: inline-block;
+    position: relative;
+    z-index: 11;
+
+    transition: background-color .2s ease;
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      transition: transform .2s ease;
+    }
+
+    &:hover {
+      .icon {
+        transform: translate(-40%, -50%);
+      }
+    }
+  }
+
+  &-next {
+    .icon {
+      transform: translate(-45%, -50%);
+    }
+
+    &:hover {
+      .icon {
+        transform: translate(-25%, -50%);
+      }
+    }
+  }
+
+  &-prev {
+    .icon {
+      transform: translate(-55%, -50%);
+    }
+
+    &:hover {
+      .icon {
+        transform: translate(-75%, -50%);
+      }
+    }
+  }
+}
+
+._fullscreen-wrapper {
+  position: fixed;
+  z-index: $z-overlay;
+}
+
+.-theme-purple {
+  .image-slider {
+    --swiper-pagination-color: #{color(purple, 400)};
+  }
+
+  .swiper-button {
+    &-next, &-prev {
+      background-color: color(purple, 600);
+
+      &:hover {
+        background-color: darken(color(purple, 600), 10);
+      }
+    }
+  }
+}
+
+.-theme-orange {
+  .image-slider {
+    --swiper-pagination-color: #{color(orange, 600)};
+  }
+
+  .swiper-button {
+    &-next, &-prev {
+      background-color: color(orange, 600);
+
+      &:hover {
+        background-color: darken(color(orange, 600), 10);
+      }
+    }
+  }
+}
+
+.-theme-blue {
+  .image-slider {
+    --swiper-pagination-color: #{color(blue, 600)};
+  }
+
+  .swiper-button {
+    &-next, &-prev {
+      background-color: color(blue, 600);
+
+      &:hover {
+        background-color: darken(color(blue, 600), 10);
+      }
+    }
+  }
+}
+
+@include breakpoint($page-max-size) {
+  .image-slider {
+    overflow: hidden;
+  }
+}
+
+@include breakpoint(xs) {
+  .image-slider {
+    margin-bottom: spacing(x10);
+  }
+}

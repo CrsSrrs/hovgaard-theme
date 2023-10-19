@@ -1,0 +1,9 @@
+.video-embed {
+  margin-bottom: spacing(x20);
+}
+
+@include breakpoint(xs) {
+  .video-embed {
+    margin-bottom: spacing(x15);
+  }
+}

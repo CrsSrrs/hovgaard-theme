@@ -1,0 +1,52 @@
+$colorPool: (
+  white: #FFF,
+  grey: (
+    100: #F5F6F7,
+    200: #E8E9EC,
+    300: #DADCE1,
+    400: #C0C2CA,
+    500: #A5A6B4,
+    600: #8C8A9E,
+    700: #6B627C,
+    800: #4C3A5B,
+    900: #392E42,
+    1000: #241E28,
+  ),
+  purple: (
+    400: #96C,
+    600: #604080,
+  ),
+  blue: (
+    400: #4195D0,
+    600: #2671E7,
+    700: #0F67F1,
+    800: #2F353C,
+    900: #161B22,
+    1000: #0D1117,
+  ),
+  greyblue: (
+    600: #696DAE,
+    700: #494C7B,
+    800: #272945,
+    900: #21233B,
+  ),
+  orange: (
+    100: #FFF143,
+    400: #FFA92C,
+    600: #FF7B22,
+    700: #ED5435,
+  )
+);
+
+$colorNames: (
+  base: (
+    light: map_get($colorPool, white),
+    base: map_get(map_get($colorPool, grey), 1000),
+  ),
+  ambient: (
+    base: map_get($colorPool, white),
+    dark: map_get(map_get($colorPool, grey), 1000),
+  ),
+);
+
+$colors: map_merge($colorPool, $colorNames);

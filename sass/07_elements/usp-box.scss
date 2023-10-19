@@ -1,0 +1,76 @@
+.usp-box {
+  padding-top: spacing(x4);
+  padding-bottom: spacing(x4);
+  padding-left: spacing(x4);
+  padding-right: spacing(x4);
+  height: 100%;
+
+  border: 1px solid;
+  border-radius: 10px;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.25);
+}
+
+._icon-wrap {
+  padding-top: spacing(xxs);
+  padding-bottom: spacing(xxs);
+  padding-left: spacing(xxs);
+  padding-right: spacing(xxs);
+  margin-bottom: spacing(s);
+
+  display: inline-block;
+  border-radius: 10px;
+
+  color: color(ambient);
+}
+
+._title {
+  margin-bottom: text-spacing(s);
+
+  @include font-size(h5);
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 0;
+  color: color(grey, 400);
+}
+
+.-theme-purple {
+  .usp-box {
+    border-color: color(grey, 800);
+    background-color: color(grey, 900);
+  }
+
+  ._icon-wrap {
+    background-color: color(purple, 400);
+  }
+}
+
+.-theme-orange {
+  .usp-box {
+    border-color: color(greyblue, 700);
+    background-color: color(greyblue, 800);
+  }
+
+  ._icon-wrap {
+    background-color: color(orange, 600);
+  }
+}
+
+.-theme-blue {
+  .usp-box {
+    border-color: color(blue, 800);
+    background-color: color(blue, 900);
+  }
+
+  ._icon-wrap {
+    background-color: color(blue, 600);
+  }
+}
+
+
+@include breakpoint(sm) {
+  .usp-box {
+    margin-bottom: spacing(s);
+  }
+}

@@ -1,0 +1,9 @@
+.accordion-insight {
+  margin-bottom: spacing(x15);
+}
+
+@include breakpoint(xs) {
+  .accordion-insight {
+    margin-bottom: spacing(x10);
+  }
+}

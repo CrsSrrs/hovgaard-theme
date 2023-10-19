@@ -1,0 +1,22 @@
+/*
+** BASICS
+*/
+
+$base-line-height: 1.5;
+$base-font-family: $primary-font-family;
+$base-letter-spacing: 0;
+
+/*
+** PAGE SIZES
+*/
+
+$page-max-size: 1280px;
+
+/*
+** USE VARS (decide what settings to use)
+*/
+
+$use-spacing-helpers: true;
+$use-spacing-helpers-responsive: true;
+
+$use-grid: true;

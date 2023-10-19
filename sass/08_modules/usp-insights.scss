@@ -1,0 +1,13 @@
+.usp-insights {
+  margin-bottom: spacing(xs);
+}
+
+@include breakpoint(sm) {
+  .usp-insights {
+    margin-bottom: 0;
+
+    .display-flex {
+      display: inline-block;
+    }
+  }
+}

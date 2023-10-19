@@ -1,0 +1,13 @@
+.content-teaser {
+  margin-bottom: spacing(xxl);
+
+  :deep(img) {
+    border-radius: 10px;
+  }
+}
+
+@include breakpoint(xs) {
+  .content-teaser {
+    margin-bottom: spacing(x10);
+  }
+}

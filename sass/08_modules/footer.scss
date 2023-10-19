@@ -1,0 +1,94 @@
+footer {
+  .logo {
+    margin-bottom: text-spacing(l);
+    width: auto;
+    display: inline-block;
+
+    :deep(img) {
+      max-width: 310px;
+    }
+  }
+}
+  ._links {
+    margin-bottom: spacing(x15);
+    text-align: center;
+  }
+
+  ._bar {
+    padding-top: spacing(s);
+    padding-bottom: spacing(s);
+
+    @include font-size(s);
+  }
+
+    ._main {
+      margin-bottom: spacing(x6);
+
+      a, a:link, a:visited, a:active {
+        margin-left: spacing(xs);
+        margin-right: spacing(xs);
+        margin-bottom: spacing(xs);
+
+        display: inline-block;
+
+        @include font-size(l);
+        text-decoration: none;
+        text-transform: uppercase;
+
+        transition: color .2s ease;
+      }
+    }
+
+.-theme-purple {
+  footer {
+    background-color: color(grey, 1000);
+  }
+
+  ._bar {
+    background-color: color(grey, 900);
+  }
+
+  ._main {
+    a, a:link, a:visited, a:active {
+      &:hover {
+        color: color(grey, 600);
+      }
+    }
+  }
+}
+
+.-theme-orange {
+  footer {
+    background-color: color(greyblue, 900);
+  }
+
+  ._bar {
+    background-color: color(greyblue, 800);
+  }
+
+  ._main {
+    a, a:link, a:visited, a:active {
+      &:hover {
+        color: color(orange, 400);
+      }
+    }
+  }
+}
+
+.-theme-blue {
+  footer {
+    background-color: color(blue, 1000);
+  }
+
+  ._bar {
+    background-color: color(blue, 900);
+  }
+
+  ._main {
+    a, a:link, a:visited, a:active {
+      &:hover {
+        color: color(blue, 400);
+      }
+    }
+  }
+}

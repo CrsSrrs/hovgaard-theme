@@ -1,0 +1,37 @@
+.header-bar {
+  color: color(ambient);
+
+  backdrop-filter: blur(10px);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-menu;
+}
+
+.mobile-toggle {
+  padding-top: spacing(xs);
+  padding-bottom: spacing(xxs);
+
+  list-style-type: none;
+  display: inline-block;
+}
+
+.-theme-purple {
+  .header-bar {
+    background-color: color(grey, 1000, .9);
+  }
+}
+
+.-theme-orange {
+  .header-bar {
+    background-color: color(greyblue, 900, .9);
+  }
+}
+
+.-theme-blue {
+  .header-bar {
+    background-color: color(blue, 1000, .9);
+  }
+}

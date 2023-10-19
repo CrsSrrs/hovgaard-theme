@@ -1,0 +1,106 @@
+.news-teaser {
+  margin-bottom: spacing(xs);
+  height: 560px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  display: flex;
+  flex-flow: column;
+
+  overflow: hidden;
+  transition: border-color .2s ease;
+
+  &, &:link, &:visited, &:active {
+    text-decoration: none;
+  }
+
+  :deep(.ratio-box) {
+    img {
+      transform: scale(1);
+      transition: transform .3s ease;
+    }
+  }
+
+  &:hover {
+    :deep(.ratio-box) {
+      img {
+        transform: scale3d(1.05, 1.05, 1);
+      }
+    }
+  }
+}
+
+._content {
+  padding-top: text-spacing(x4);
+  padding-left: spacing(x4);
+  padding-right: spacing(x4);
+  overflow-y: auto;
+  flex: 1 1 auto;
+
+  &::-webkit-scrollbar{
+    display: none;
+  }
+}
+
+._foot {
+  padding-top: text-spacing(s);
+  padding-bottom: text-spacing(x4);
+  padding-left: spacing(x4);
+  padding-right: spacing(x4);
+}
+
+._title {
+  margin-bottom: spacing(s);
+  font-weight: 700;
+
+  &:not(.-small) {
+    @include font-size(h4);
+  }
+
+  &.-small {
+    @include font-size(h5);
+  }
+}
+
+._excerpt {
+  :deep(p:last-child) {
+    margin-bottom: 0;
+  }
+}
+
+.-theme-purple {
+  .news-teaser {
+    background-color: color(grey, 900);
+
+    &:hover {
+      border-color: color(purple, 600);
+    }
+  }
+}
+
+.-theme-orange {
+  .news-teaser {
+    background-color: color(greyblue, 800);
+
+    &:hover {
+      border-color: color(orange, 700);
+    }
+  }
+}
+
+.-theme-blue {
+  .news-teaser {
+    background-color: color(blue, 900);
+
+    &:hover {
+      border-color: color(blue, 600);
+    }
+  }
+}
+
+
+@include breakpoint(xs) {
+  .news-teaser {
+    height: auto;
+  }
+}

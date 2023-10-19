@@ -1,0 +1,69 @@
+.color-base {
+  color: color(base);
+}
+
+.color-grey-100 {
+  color: color(grey, 500);
+}
+
+.color-grey-200 {
+  color: color(grey, 500);
+}
+
+.color-grey-300 {
+  color: color(grey, 500);
+}
+
+.color-grey-400 {
+  color: color(grey, 500);
+}
+
+.color-grey-500 {
+  color: color(grey, 500);
+}
+
+.color-grey-600 {
+  color: color(grey, 500);
+}
+
+.color-grey-700 {
+  color: color(grey, 700);
+}
+
+.color-grey-800 {
+  color: color(grey, 500);
+}
+
+.color-grey-900 {
+  color: color(grey, 500);
+}
+
+.color-grey-1000 {
+  color: color(grey, 500);
+}
+
+.color-purple-400 {
+  color: color(purple, 400);
+}
+
+.color-purple-600 {
+  color: color(purple, 600);
+}
+
+.-theme-purple {
+  .theme-color-400 {
+    color: color(purple, 400);
+  }
+}
+
+.-theme-orange {
+  .theme-color-400 {
+    color: color(orange, 400);
+  }
+}
+
+.-theme-blue {
+  .theme-color-400 {
+    color: color(blue, 400);
+  }
+}

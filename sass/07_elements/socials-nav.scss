@@ -1,0 +1,42 @@
+.socials-nav {
+  a, a:link, a:visited, a:active {
+    margin-left: spacing(x1h);
+    margin-right: spacing(x1h);
+    display: inline-block;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition: color .2s ease;
+  }
+}
+
+.-theme-purple {
+  .socials-nav {
+    a, a:link, a:visited, a:active {
+      &:hover {
+        color: color(grey, 600);
+      }
+    }
+  }
+}
+
+.-theme-orange {
+  .socials-nav {
+    a, a:link, a:visited, a:active {
+      &:hover {
+        color: color(orange, 400);
+      }
+    }
+  }
+}
+
+.-theme-blue {
+  .socials-nav {
+    a, a:link, a:visited, a:active {
+      &:hover {
+        color: color(blue, 400);
+      }
+    }
+  }
+}

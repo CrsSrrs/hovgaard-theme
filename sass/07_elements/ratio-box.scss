@@ -1,0 +1,205 @@
+.ratio-box {
+  width: 100%;
+
+  display: block;
+  overflow: hidden;
+
+  position: relative;
+
+  &::before {
+    content: ' ';
+    padding-top: 100%;
+
+    display: block;
+  }
+
+  .content {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    overflow: hidden;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    :deep(iframe) {
+      width: 100%;
+      height: 100%;
+    }
+
+    img, video {
+      width: 100%;
+      height: auto;
+    }
+
+    img, video {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+
+      display: inline-block;
+    }
+
+    &.-clickable {
+      cursor: pointer;
+    }
+
+    &.-fullscreen {
+      position: fixed;
+      transition: background-color .2s ease;
+      z-index: $z-overlay;
+
+      img {
+        object-fit: contain;
+        width: auto;
+        height: auto;
+        max-width: 100vw;
+        max-height: 100vh;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    background-color: color(grey, 900, .2);
+  }
+
+  ._text {
+    position: absolute;
+  }
+}
+
+.ratio-box.-square {
+  &::before {
+    padding-top: 100%;
+  }
+}
+
+.ratio-box.-thin-banner {
+  &::before {
+    padding-top: 36%;
+  }
+}
+
+.ratio-box.-banner {
+  &::before {
+    padding-top: 41%;
+  }
+}
+
+.ratio-box.-half {
+  &::before {
+    padding-top: 50%;
+  }
+}
+
+.ratio-box.-fullhd {
+  &::before {
+    padding-top: 56.25%;
+  }
+}
+
+.ratio-box.-goldenratio {
+  &::before {
+    padding-top: 61.8%;
+  }
+}
+
+.ratio-box.-seventy {
+  &::before {
+    padding-top: 70%;
+  }
+}
+
+.ratio-box.-three-quarters {
+  &::before {
+    padding-top: 75%;
+  }
+}
+
+.ratio-box.-square-caption {
+  &::before {
+    padding-top: 87.5%;
+  }
+}
+
+.ratio-box.-portrait {
+  &::before {
+    padding-top: 116%;
+  }
+}
+
+.ratio-box.-small-card {
+  &::before {
+    padding-top: 123%;
+  }
+}
+
+.ratio-box.-card {
+  &::before {
+    padding-top: 136%;
+  }
+}
+
+.ratio-box.-insta {
+  &::before {
+    padding-top: 152%;
+  }
+}
+
+.-theme-purple {
+  .ratio-box {
+    .content.-fullscreen {
+      background-color: color(grey, 1000, .9);
+    }
+  }
+}
+
+.-theme-orange {
+  .ratio-box {
+    .content.-fullscreen {
+      background-color: color(greyblue, 900, .9);
+    }
+  }
+}
+
+.-theme-blue {
+  .ratio-box {
+    .content.-fullscreen {
+      background-color: color(blue, 1000, .9);
+    }
+  }
+}
+
+@supports (object-fit: cover) {
+  .ratio-box {
+    .content:not(.-show-background) {
+      background-image: none !important;
+    }
+  }
+}
+
+@supports (object-fit: cover) and (-ms-ime-align:auto) {
+  .ratio-box {
+    .content:not(.-show-background) {
+      video {
+        height: auto;
+      }
+    }
+  }
+}

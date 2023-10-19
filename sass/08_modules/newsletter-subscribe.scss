@@ -1,0 +1,40 @@
+.newsletter-subscribe {
+  padding-top: spacing(l);
+  padding-bottom: spacing(l);
+  padding-left: spacing(l);
+  padding-right: spacing(l);
+
+  .h3 {
+    margin-bottom: text-spacing(s);
+  }
+
+  input {
+    padding-top: spacing(xs);
+    padding-bottom: spacing(xs);
+    padding-left: spacing(s);
+    padding-right: spacing(s);
+    margin-bottom: text-spacing(xs);
+    width: 100%;
+
+    display: block;
+    outline: 0;
+    border: none;
+    border-radius: 10px;
+  }
+}
+
+@include breakpoint($page-max-size) {
+  .newsletter-subscribe {
+    margin-left: $grid-gutter-width;
+    margin-right: $grid-gutter-width;
+  }
+}
+
+@include breakpoint(xs) {
+  .newsletter-subscribe {
+    padding-top: spacing(m);
+    padding-bottom: spacing(m);
+    padding-left: spacing(s);
+    padding-right: spacing(s);
+  }
+}

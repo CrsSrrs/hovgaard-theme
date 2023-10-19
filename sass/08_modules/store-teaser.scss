@@ -1,0 +1,79 @@
+.store-teaser {
+  margin-bottom: spacing(x15);
+
+  .h3 {
+    padding-left: spacing(l);
+    padding-right: spacing(l);
+    margin-bottom: text-spacing(l);
+  }
+}
+
+._wrapper {
+  padding-top: spacing(l);
+  padding-bottom: spacing(l);
+  padding-left: spacing(l);
+  padding-right: spacing(l);
+
+  border: 1px solid;
+  border-radius: 10px;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.25);
+
+  text-align: center;
+}
+
+.button {
+  margin-bottom: spacing(xxs);
+
+  &:not(:last-child) {
+    margin-right: text-spacing(xs);
+  }
+}
+
+.-theme-purple {
+  ._wrapper {
+    border-color: color(grey, 800);
+    background-color: color(grey, 900);
+  }
+}
+
+.-theme-orange {
+  ._wrapper {
+    border-color: color(greyblue, 700);
+    background-color: color(greyblue, 800);
+  }
+}
+
+.-theme-blue {
+  ._wrapper {
+    border-color: color(blue, 800);
+    background-color: color(blue, 900);
+  }
+}
+
+@include breakpoint(sm) {
+  .store-teaser {
+    .h3 {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  ._wrapper {
+    padding-left: spacing(m);
+    padding-right: spacing(m);
+  }
+}
+
+@include breakpoint(xs) {
+  .store-teaser {
+    margin-bottom: spacing(x10);
+  }
+
+  ._wrapper {
+    padding-top: spacing(x4);
+    padding-bottom: spacing(x4);
+    padding-left: spacing(s);
+    padding-right: spacing(s);
+  }
+}
+

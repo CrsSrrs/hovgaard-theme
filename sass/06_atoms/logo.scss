@@ -1,0 +1,25 @@
+.logo {
+  width: 100%;
+  height: auto;
+
+  text-align: center;
+
+  a {
+    display: block;
+    height: 100%;
+  }
+
+  :deep(img) {
+    max-width: 200px;
+    display: block;
+  }
+}
+
+
+
+//IE Hack
+_:-ms-fullscreen, :root .logo {
+  svg {
+    height: 62px;
+  }
+}

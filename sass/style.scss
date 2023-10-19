@@ -1,0 +1,49 @@
+/*
+ * Import all global styling declarations,
+ * which means they affect all atoms, elements,
+ * modules and pages/views
+ */
+ // import normalize as base rules
+@import '../../../../node_modules/modern-normalize/modern-normalize.css';
+
+@import '00_webfonts/webfonts';
+
+// import generics
+@import '03_generic/grid';
+
+// import natives
+@import '04_natives/anchors';
+@import '04_natives/body';
+@import '04_natives/container';
+@import '04_natives/headlines';
+@import '04_natives/html';
+@import '04_natives/list';
+@import '04_natives/main';
+@import '04_natives/media';
+@import '04_natives/text';
+
+// import layout
+@import '05_layout/news';
+@import '05_layout/site';
+
+
+/*
+ * Important: Do not import atoms, elements and modules here
+ *
+ * Import happens inside Vue-Components
+ * -> @/components/atoms/, elements/ & modules/
+ */
+
+
+// import helpers
+@import '09_helpers/color';
+@import '09_helpers/display';
+@import '09_helpers/flow';
+@import '09_helpers/font';
+@import '09_helpers/gradient';
+@import '09_helpers/hide';
+@import '09_helpers/position';
+@import '09_helpers/spacing';
+@import '09_helpers/text';
+@import '09_helpers/valign';
+@import '09_helpers/visibility';

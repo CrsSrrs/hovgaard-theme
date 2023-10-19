@@ -1,0 +1,143 @@
+.mobile-nav {
+  text-align: right;
+
+  &-overlay, &-panel {
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: $z-mobile-menu;
+
+    transition: visibility 0s .2s, opacity .2s ease;
+
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+
+      transition: visibility 0s 0s, opacity .2s ease;
+    }
+  }
+
+
+  &-panel {
+    .main-nav :deep(.nav-item) {
+      transform: translateX(25%);
+      transition: transform 0s .3s ease-in;
+    }
+
+    &.is-active {
+      .main-nav :deep(.nav-item) {
+        transform: translateX(0);
+        transition: transform .3s ease-out;
+
+        &:nth-child(1) {
+          transition-delay: 0s;
+        }
+
+        &:nth-child(2) {
+          transition-delay: 0.05s;
+        }
+
+        &:nth-child(3) {
+          transition-delay: 0.1s;
+        }
+
+        &:nth-child(4) {
+          transition-delay: 0.15s;
+        }
+
+        &:nth-child(5) {
+          transition-delay: 0.2s;
+        }
+      }
+    }
+  }
+}
+
+.main-nav {
+  margin-top: spacing(x15);
+  padding-bottom: spacing(x5);
+
+  border-bottom: 1px solid;
+
+  :deep(.nav-item) {
+    padding-left: spacing(l);
+    padding-right: spacing(x4);
+    margin-top: spacing(s);
+    margin-bottom: spacing(s);
+    margin-right: 0;
+    display: block;
+    border: none;
+
+    @include font-size(h5);
+
+    a {
+      padding-top: spacing(xxs);
+      padding-bottom: spacing(xxs);
+    }
+
+    &.is-active {
+      a, a:link, a:active, a:visited {
+        border-bottom: 1px solid color(ambient);
+      }
+    }
+  }
+}
+
+.socials-nav {
+  margin-top: spacing(m);
+  padding-right: spacing(x2h);
+
+  text-align: right;
+}
+
+.-theme-purple {
+  .mobile-nav-overlay {
+    background-color: color(grey, 900, .95);
+  }
+
+  .main-nav {
+    border-color: color(grey, 700);
+  }
+
+  .socials-nav {
+    color: color(grey, 400);
+  }
+}
+
+.-theme-orange {
+  .mobile-nav-overlay {
+    background-color: color(greyblue, 900, .95);
+  }
+
+  .main-nav {
+    border-color: color(grey, 100, .2);
+  }
+
+  .socials-nav {
+    color: color(grey, 100, .6);
+  }
+}
+
+.-theme-blue {
+  .mobile-nav-overlay {
+    background-color: color(blue, 900, .95);
+  }
+
+  .main-nav {
+    border-color: color(blue, 800);
+  }
+
+  .socials-nav {
+    color: lighten(color(blue, 800), 20);
+  }
+}

@@ -1,0 +1,23 @@
+/*
+ * Import all variables, mixins and functions,
+ * to access them in all other .scss files
+ */
+@use "sass:math";
+
+@import '00_functions/base';
+
+// import settings
+@import '01_settings/font-families';
+@import '01_settings/base-vars';
+@import '01_settings/breakpoints';
+@import '01_settings/colors';
+@import '01_settings/font-sizes';
+@import '01_settings/grid';
+@import '01_settings/spacing';
+@import '01_settings/z-layers';
+
+// import tools
+@import '02_tools/colors';
+@import '02_tools/font-size';
+@import '02_tools/mixins';
+@import '02_tools/spacing';
