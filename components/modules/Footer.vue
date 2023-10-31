@@ -20,7 +20,7 @@
       <div class="site-inner">
         <div class="row">
           <div class="col-12">
-            &copy; {{ currentYear }} HOVGAARD GAMES APS. ALL RIGHTS RESERVED.
+            &copy; 2017-{{ currentYear }} HOVGAARD GAMES APS. ALL RIGHTS RESERVED.
           </div>
           <div class="col-12 text-right">
             VAT: DK38582747
