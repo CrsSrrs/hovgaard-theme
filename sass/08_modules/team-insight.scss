@@ -26,10 +26,16 @@
 }
 
 ._name {
-  margin-bottom: text-spacing(x4);
+  margin-bottom: text-spacing(x1);
 
   @include font-size(h5);
   font-weight: 700;
+}
+
+._position {
+  margin-bottom: text-spacing(x4);
+  @include font-size(h6);
+  font-weight: 400;
 }
 
 ._socials {

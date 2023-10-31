@@ -12,6 +12,7 @@
           <img v-else :src="member.gender === 'female' ? FemaleAvatar : MaleAvatar" loading="lazy">
         </div>
         <div class="_name">{{ member.name }}</div>
+        <div class="_position">{{ member.position }}</div>
         <div class="_socials" v-if="member.socials.length >= 0">
           <a v-for="item in member.socials" :key="item.platform" :href="item.link" target="_blank">
             <Icon class="-inline -size-20"><component :is="getIcon(item.platform)" /></Icon>
