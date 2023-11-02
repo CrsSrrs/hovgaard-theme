@@ -11,43 +11,21 @@
         </p>
       </div>
       <div class="col-8 col-offset-6 col-sm-24 col-sm-offset-0 valign-middle">
-        <form
-          ref="form"
-          :action="`https://static.mailerlite.com/webforms/submit/${theme.subscribeListCode}`"
-          :data-code="theme.subscribeListCode"
-          method="post"
-          target="_blank"
-        >
-          <input
-            type="email"
-            placeholder="Your email address"
-            name="fields[email]"
-            required
-            autocomplete="email"
-            v-model="email"
-            aria-invalid="false"
-          >
-          <Button class="-full-width" @click.native.stop="subscribe">Subscribe</Button>
-        </form>
+        <div id="ml-form" class="ml-form-embed"
+          :data-account="theme.mailerlite.account"
+          :data-form="theme.mailerlite.form">
+        </div>
       </div>
     </div>
   </section>
+
+
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
 import { useData } from 'vitepress';
-import Button from '@/components/atoms/Button.vue';
 
 const { theme } = useData();
-const form = ref(null);
-const email = ref('');
-
-function subscribe() {
-  if (form.value.reportValidity()) {
-    form.value.submit();
-  }
-}
 </script>
 
 <style scoped lang="scss" src="@/sass/08_modules/newsletter-subscribe.scss"></style>

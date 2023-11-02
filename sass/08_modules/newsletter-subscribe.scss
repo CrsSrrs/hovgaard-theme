@@ -23,6 +23,119 @@
   }
 }
 
+#ml-form {
+  :deep(.ml-form-embedContainer) {
+    .ml-form-embedWrapper {
+      background-color: transparent;
+
+      .ml-form-embedBody {
+        padding: 0;
+
+        .ml-form-formContent {
+          margin-bottom: text-spacing(xs);
+        }
+
+        .ml-form-fieldRow {
+          input {
+            padding-top: spacing(xs) !important;
+            padding-bottom: spacing(xs) !important;
+            padding-left: spacing(s) !important;
+            padding-right: spacing(s) !important;
+            outline: 0;
+          }
+        }
+
+        .ml-form-embedSubmit {
+          margin: 0;
+
+          button {
+            padding-top: spacing(x1h) !important;
+            padding-bottom: spacing(x1h) !important;
+            padding-left: spacing(x2h) !important;
+            padding-right: spacing(x2h) !important;
+
+            transition: background-color .2s ease;
+          }
+        }
+      }
+    }
+  }
+}
+
+.-theme-purple {
+  #ml-form {
+    :deep(.ml-form-embedContainer) {
+      .ml-form-embedWrapper {
+        .ml-form-embedBody {
+          .ml-form-embedSubmit {
+            button {
+              background-color: color(purple, 400) !important;
+
+              &:hover {
+                background-color: darken(color(purple, 400), 10) !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.-theme-orange {
+  #ml-form {
+    :deep(.ml-form-embedContainer) {
+      .ml-form-embedWrapper {
+        .ml-form-embedBody {
+          .ml-form-embedSubmit {
+            button {
+              background-color: color(orange, 600) !important;
+
+              &:hover {
+                background-color: darken(color(orange, 600), 10) !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.-theme-blue {
+  #ml-form {
+    :deep(.ml-form-embedContainer) {
+      .ml-form-embedWrapper {
+        .ml-form-embedBody {
+          .ml-form-embedSubmit {
+            @property --blue400 {
+              syntax: '<color>';
+              initial-value: color(blue, 400);
+              inherits: false;
+            }
+
+            @property --blue700 {
+              syntax: '<color>';
+              initial-value: color(blue, 700);
+              inherits: false;
+            }
+
+            button {
+              background: linear-gradient(90deg, var(--blue400) 0%, var(--blue700) 100%);
+              transition: --blue400 .2s, --blue700 .2s;
+
+              &:hover {
+                --blue400: #{darken(color(blue, 700), 10)};
+                --blue700: #{darken(color(blue, 700), 10)};
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @include breakpoint($page-max-size) {
   .newsletter-subscribe {
     margin-left: $grid-gutter-width;
