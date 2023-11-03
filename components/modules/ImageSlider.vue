@@ -1,34 +1,37 @@
 <template>
   <section class="image-slider">
     <div class="row">
-      <swiper-container
-        ref="swiperRef"
-        :space-between="16"
-        :injectStyles="['.swiper { overflow: visible; }']"
-        :pagination="true"
-        :breakpoints="{
-          600: {
-            slidesPerView: 1,
-          },
-          900: {
-            slidesPerView: 2,
-          },
-          1200: {
-            slidesPerView: 3,
-          },
-        }"
-        @slidechange="onSlideChange"
-      >
-        <swiper-slide
-          v-for="(image, index) in images"
-          :key="image"
-          lazy="true"
+      <ClientOnly>
+        <swiper-container
+          ref="swiperRef"
+          :space-between="16"
+          :injectStyles="['.swiper { overflow: visible; }']"
+          :pagination="true"
+          slidesPerView="auto"
+          :breakpoints="{
+            600: {
+              slidesPerView: 1,
+            },
+            900: {
+              slidesPerView: 2,
+            },
+            1200: {
+              slidesPerView: 3,
+            },
+          }"
+          @slidechange="onSlideChange"
         >
-          <div class="col-24">
-            <RatioBox :src="image" class="-fullhd" @click="showFullscreen(index)"></RatioBox>
-          </div>
-        </swiper-slide>
-      </swiper-container>
+          <swiper-slide
+            v-for="(image, index) in images"
+            :key="image"
+            lazy="true"
+          >
+            <div class="col-24">
+              <RatioBox :src="image" class="-fullhd" @click="showFullscreen(index)"></RatioBox>
+            </div>
+          </swiper-slide>
+        </swiper-container>
+      </ClientOnly>
     </div>
     <div class="row">
       <div class="col-24">
