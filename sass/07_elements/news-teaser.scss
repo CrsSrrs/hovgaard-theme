@@ -15,7 +15,7 @@
   }
 
   :deep(.ratio-box) {
-    img {
+    .content img {
       transform: scale(1);
       object-position: bottom;
       transition: transform .3s ease;
