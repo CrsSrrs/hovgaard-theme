@@ -21,6 +21,13 @@
     border: none;
     border-radius: 10px;
   }
+
+  ._error {
+    margin-top: spacing(xs);
+    margin-bottom: 0;
+    color: red;
+    @include font-size(s);
+  }
 }
 
 #ml-form {
