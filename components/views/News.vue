@@ -1,12 +1,16 @@
 <script setup lang="ts">
-import { useData } from 'vitepress';
+import { useData, useRouter } from 'vitepress';
 import { usePosts } from '@/composables/usePosts';
 import StageNews from '@/components/modules/News/Stage.vue'
 import NewsletterSubscribe from '@/components/modules/NewsletterSubscribe.vue';
 
 const { frontmatter } = useData();
 const { post } = usePosts();
+const router = useRouter();
 
+if (post.value.external) {
+  router.go('/404');
+}
 </script>
 
 <template>
