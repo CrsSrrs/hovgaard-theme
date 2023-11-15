@@ -2,8 +2,61 @@
   margin-bottom: spacing(x15);
 }
 
+._switch {
+  margin-bottom: spacing(l);
+
+  .button {
+    border-radius: 0;
+
+    &:first-child {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+  }
+}
+
+@include breakpoint(sm-and-up) {
+  ._switch {
+    .button {
+      &:first-child {
+        border-right: none;
+      }
+
+      &:last-child {
+        border-left: none;
+      }
+    }
+  }
+}
+
 @include breakpoint(xs) {
   .news-overview {
     margin-bottom: spacing(x10);
+  }
+
+  ._switch {
+    .button {
+      @include font-size(m);
+      display: block;
+
+      &:first-child {
+        border-bottom: none;
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+
+      &:last-child {
+        border-top: none;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+    }
   }
 }

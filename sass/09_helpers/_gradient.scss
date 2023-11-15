@@ -151,7 +151,7 @@
           ellipse at center 0%,
           color(purple, 600, 0.3) 0,
           color(purple, 600, 0.3) 50%,
-          transparent 100%
+          transparent 90%
         );
       }
     }
@@ -164,7 +164,7 @@
           ellipse at center 0%,
           color(greyblue, 600, 0.2) 0,
           color(greyblue, 600, 0.2) 50%,
-          transparent 100%
+          transparent 90%
         );
       }
     }
@@ -177,9 +177,17 @@
           ellipse at center 0%,
           color(blue, 400, 0.2) 0,
           color(blue, 400, 0.2) 50%,
-          transparent 100%
+          transparent 90%
         );
       }
     }
+  }
+}
+
+
+
+@include breakpoint(xs) {
+  .gradient-glow::before {
+    height: 75vh;
   }
 }

@@ -31,24 +31,49 @@
     padding-left: spacing(x1h);
     padding-right: spacing(x1h);
   }
+
+  &.-outline {
+    border: 1px solid transparent;
+    background-color: transparent;
+  }
+
+  &[disabled] {
+    pointer-events: none;
+  }
 }
 
 .-theme-purple {
-  .button {
+  .button:not(.-outline) {
     background-color: color(purple, 400);
 
     &:hover {
       background-color: darken(color(purple, 400), 10);
     }
   }
+
+  .button.-outline {
+    border-color: color(purple, 400);
+
+    &:hover, &.-active {
+      background-color: color(purple, 400);
+    }
+  }
 }
 
 .-theme-orange {
-  .button {
+  .button:not(.-outline) {
     background-color: color(orange, 600);
 
     &:hover {
       background-color: darken(color(orange, 600), 10);
+    }
+  }
+
+  .button.-outline {
+    border-color: color(orange, 600);
+
+    &:hover, &.-active {
+      background-color: color(orange, 600);
     }
   }
 }
@@ -66,13 +91,21 @@
 }
 
 .-theme-blue {
-  .button {
+  .button:not(.-outline) {
     background: linear-gradient(90deg, var(--blue400) 0%, var(--blue700) 100%);
     transition: --blue400 .2s, --blue700 .2s;
 
     &:hover {
       --blue400: #{darken(color(blue, 700), 10)};
       --blue700: #{darken(color(blue, 700), 10)};
+    }
+  }
+
+  .button.-outline {
+    border-color: color(blue, 400);
+
+    &:hover, &.-active {
+      background-color: color(blue, 400);
     }
   }
 }
