@@ -1,20 +1,22 @@
 <template>
   <section class="news-overview" v-if="posts.length > 0">
-    <div class="row _switch">
-      <div class="col-24 col-xs-18 col-xs-offset-3 text-center">
-        <Button
-          v-for="{ url, title } in newsSwitch"
-          :key="url"
-          :href="url"
-          :icon="false"
-          class="-outline"
-          :class="{ '-active': isCurrent(url) }"
-          :disabled="isCurrent(url) || undefined"
-        >
-          {{ title }}
-        </Button>
+    <ClientOnly>
+      <div class="row _switch">
+        <div class="col-24 col-xs-18 col-xs-offset-3 text-center">
+          <Button
+            v-for="{ url, title } in newsSwitch"
+            :key="url"
+            :href="url"
+            :icon="false"
+            class="-outline"
+            :class="{ '-active': isCurrent(url) }"
+            :disabled="isCurrent(url) || undefined"
+          >
+            {{ title }}
+          </Button>
+        </div>
       </div>
-    </div>
+    </ClientOnly>
     <div class="row">
       <div class="col-8 col-sm-12 col-xs-24" v-for="post of filteredPosts" :key="post.url">
         <NewsTeaser :data="post" :height="(itemHeight > minHeight) ? itemHeight : minHeight" @set-height="checkHeight"></NewsTeaser>
